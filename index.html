@@ -25,11 +25,53 @@
   <body>
     <header>
       <h1>MiniConnect</h1>
+      <nav>
+        <ul>
+          <li><a href="https://github.com/miniconnect">Development</a></li>
+          <li><a href="https://miniconnect.github.io/holodb">HoloDB</a></li>
+          <li><a href="https://github.com/miniconnect/general-docs/blob/main/examples/README.md">Examples</a></li>
+        </ul>
+      </nav>
     </header>
     
     <main>
-      <p>Under construction.</p>
-      <p><a href="https://miniconnect.github.io/holodb">HoloDB</a></p>
+      <section>
+        <h2>MiniConnect API</h2>
+        <p>
+          MiniConnect API is a database connector written in Java.
+          Its design is minimalist, obvious and flexible.
+          It comes with a network protocol, JDBC adapter, and several tools.
+        </p>
+        <p><a href="https://github.com/miniconnect/miniconnect-api/tree/master/projects/api/src/main/java/hu/webarticum/miniconnect/api">Browse the API interfaces</a></p>
+        <code><pre>
+var result = session.execute("SELECT * FROM tbl").requireSuccess();
+for (var record : new ResultTable(result.resultSet())) {
+    System.out.println(String.format("#%d: %s",
+        record.get("id").get(),
+        record.rowMap()));
+}
+        </pre></code>
+      </section>
+      
+      <section>
+        <h2>MiniBase framework</h2>
+        <p>
+          MiniBase is a framework for building relational databases with simplicity, flexibility and extensibility in mind.
+          It can be easily adapted to any environment through the MiniConnect API.
+        </p>
+        <p><a href="https://github.com/miniconnect/minibase">Browse the code</a></p>
+      </section>
+      
+      <section>
+        <h2>HoloDB</h2>
+        <p>
+          HoloDB is a mock relational database built on the MiniBase framework that provides random data based on constraints you specify.
+          The results are delivered on-the-fly, no need for large memory usage, no generation or anonymization process:
+          just write the configuration file and start the server.
+        </p>
+        <p><a href="https://miniconnect.github.io/holodb">Read more</a></p>
+        <p><a href="https://github.com/miniconnect/holodb">Browse the code</a></p>
+      </section>
     </main>
     
     <footer>
