@@ -17,3 +17,8 @@ regenerateIcon () {
 
 regenerateIcon "${rootDir}/icon"
 regenerateIcon "${rootDir}/holodb/icon"
+
+find "${rootDir}" -type f -name '*.source.css' | while IFS='' read sourceFile; do
+    targetFile="$( echo "${sourceFile}" | sed -E 's/.source.css$/.css/' )"
+    echo "${sourceFile} --> ${targetFile}"
+done
