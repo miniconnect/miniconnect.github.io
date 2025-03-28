@@ -5,7 +5,7 @@
 #----------
 
 
-rootDir="$( dirname -- "$( realpath "$0" )" )"
+rootDir="$( dirname -- "$( realpath -- "$0" )" )"
 
 regenerateIcon () {
     iconDir="$1"
