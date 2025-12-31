@@ -13,7 +13,7 @@ regenerateIcon () {
     convert "${iconDir}/128x128.png" -resize 64x64 "${iconDir}/64x64.png"
     convert "${iconDir}/128x128.png" -resize 32x32 "${iconDir}/32x32.png"
     convert "${iconDir}/128x128.png" "${iconDir}/64x64.png" "${iconDir}/32x32.png" "${iconDir}/favicon.ico"
-} 
+}
 
 regenerateIcon "${rootDir}/icon"
 regenerateIcon "${rootDir}/holodb/icon"
